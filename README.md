@@ -1,16 +1,29 @@
 # UR3-Analytics
-An exercie to demonstrate the usage of Thingworx Analytics by using it to determine the weight of an object that a UR3 robot is holding.
-In this exercise, you will:
+
+Objective: Demonstrate the usage of Thingworx Analytics by using it to determine the weight of an object that a UR3 robot is holding.
+In this exercise, you will perform:
 <ul>
-<li>Collect joint amperage data from the UR3</li>
-<li>Create a machine learning model</li>
-<li>Perform automated real time predicitons</li>
-<li>Test model with unseen weights</li>
+<li>Data Collection - Collect joint amperage data from the UR3</li>
+<li>Modeling - Create a machine learning model</li>
+<li>Deployment - Perform automated real time predicitons</li>
 </ul>
 
+## Data Collection
 
 <details>
-<summary>Data Collection</summary>
+<summary>UR3 Setup</summary>
+<br>
+  
+  <ul>
+<li>Setup Modbus profile on teaching pendant</li>
+<li>Download UR programs</li>
+<li>Get IP address for Kepware</li>
+    For this connection to work, you will need to change the IP address of the target device in the Kepware settings to the IP address of your UR3 robot. The IP address of your robot is found on the teaching pendant under **Hamburger menu>Settings>Network**. <br />
+</ul>
+  
+  </details>
+<details>
+<summary>Thingworx Setup</summary>
 <br>
   We will read and send data bewteen the UR3 and Thingworx with Kepware.<br />
   First download the **Remote Thing** file and the **Gateway Thing** file provided below and import it into your Thingworx instance.<br />
@@ -18,13 +31,86 @@ In this exercise, you will:
   > [UR3_thing](https://www.google.com) (Remote Thing)
   > [UR3_gateway](https://www.google.com) (Gateway)
   
-  In Thingworx, select **Import/Export** and import the UR3_Thing<br />
+  In Thingworx, select **Import/Export** and import the UR3_Thing and the UR3_gateway<br />
 
 Download the Kepware configuration file shown below.<br />
   
   > [UR3_kepwareConfig.opf](https://www.google.com)
   
-  For this connection to work, you will need to change the IP address of the target device in the Kepware settings to the IP address of your UR3 robot. The IP address of your robot is found on the teaching pendant under **Hamburger menu>Settings>Network**. <br />
- Inside of Kepware, right click on UR3 and select properties. Under **General>ID**, input the IP address of your UR3.
   
-</details>
+ Inside of Kepware, right click on UR3 and select properties. Under **General>ID**, input the IP address of your UR3.<br />
+  
+  Create an app key in Thingworx and input the app key into Kepware.<br />
+  
+  Ensure all thing properties are good quality in Thingworx.<br />
+ 
+  
+  </details>
+  
+  <details>
+<summary>Onshape Model data</summary>
+<br>
+  
+  Create a digital twin in Onshape which mirrors the robots positions.
+  
+  In addition to adding joint data to the model, we will add object distance from base.<br />
+  
+  </details>
+
+  
+  <details>
+<summary>Collect Data</summary>
+<br>
+  
+Have 5 different weights on hand for the robot to hold. Weights cannot exceed the max weight specified by the robot.<br />
+  
+  Run the program called, "weight_training," from UR teaching pendant.<br />
+  The teaching pendant will require user input throughout the program. When the program asks to place a weight into the robot gripper, hold the object in between the jaws and press continue on the pendant. The program will wait 1 second and then close the gripper.<br />
+  
+  It will then perform the movements to generate the data needed to train the machine learning model. 
+  
+  Run the program with each of the 5 objects.<br />
+  
+  </details>
+  
+
+## Modeling
+  <details>
+<summary>Export and clean Data</summary>
+<br>
+  
+Export the data into a CSV.<br />
+Open the CSV file in Micosoft Excel<br />
+Delete bad data<br />
+  
+  </details>
+  
+  <details>
+<summary>Thingworx Analytics</summary>
+<br>
+  
+Upload data into Thingworx analytics.<br />
+Create model using default settings.<br />
+
+  
+  </details>
+  
+  ## Deployment
+  
+   <details>
+<summary>Connect inputs and output to thing properties</summary>
+<br>
+  
+Connect predictions to UR3_thing properties.<br />
+  
+  </details>
+  
+  <details>
+<summary>Testing</summary>
+<br>
+  
+Run program called, "weight_detection."<br />
+Predicted values will appear on teaching pendant and in Thingworx.<br />
+Test the model by giving robot unseen weights.<br />
+  
+  </details>
