@@ -32,7 +32,7 @@ You must create an application key to give the Kepware server authorization to c
 
 3. Set the expiration date for a future date.
 
-![appkey_expiration](./images/set-expiration.png)
+![appkey_expiration](./images/set-expirationdate.png)
 
 4. Select the button to copy the app kay to the clipboard.
 
