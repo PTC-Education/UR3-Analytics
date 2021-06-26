@@ -8,6 +8,37 @@ In this exercise, you will perform:
 <li>Deployment - Perform automated real time predicitons</li>
 </ul>
 
+## Setup
+<li>UR Teaching Pendant</li>
+Find ip address
+Set up modbus profile
+[screenshots]
+
+<li>Thingworx Composer</li>
+import project file
+
+Create appkey
+You must create an application key to give the Kepware server authorization to communicate with the Thingworx server. 
+1. Select New and type 'app' and select **application key**
+
+![Create Appkey](./images/create-key.png)
+
+2. Fill out the app key general information</br>
+    A. Name the app key 'UR3-appkey'</br>
+    B. Set the project to 'UR3-Analytics'</br>
+    C. Under 'User Name Reference', select your own Thingworx username.</br>
+
+![Name Appkey](./images/name-key.png)
+
+3. Set the expiration date for a future date.
+
+![appkey_expiration](./images/set-expiration.png)
+
+4. Select the button to copy the app kay to the clipboard.
+
+![copy-key](./images/copy-key.png)
+
+
 ## Data Collection
 
 <details>
