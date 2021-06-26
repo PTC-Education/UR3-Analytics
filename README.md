@@ -42,9 +42,9 @@ You must create an application key to give the Kepware server authorization to c
 
 ![copy-key](./images/copy-key.png)
 
-
-
 </details>
+
+
 
 ## Data Collection
 
