@@ -3,12 +3,13 @@
 Objective: Demonstrate the usage of Thingworx Analytics by using it to determine the weight of an object that a UR3 robot is holding.
 In this exercise, you will perform:
 <ul>
+<li>Setup - Dowload and configure files and devices</li>[Overview](https://github.com/PTC-Education/UR3-Analytics#0-Setup)
 <li>Data Collection - Collect joint amperage data from the UR3</li>
 <li>Modeling - Create a machine learning model</li>
 <li>Deployment - Perform automated real time predicitons</li>
 </ul>
 
-## Setup
+## 0. Setup
 <li>UR Teaching Pendant</li>
 Find ip address
 Set up modbus profile
@@ -17,7 +18,10 @@ Set up modbus profile
 <li>Thingworx Composer</li>
 import project file
 
-Create appkey
+<details>
+<summary>Create appkey</summary>
+<br>
+
 You must create an application key to give the Kepware server authorization to communicate with the Thingworx server. 
 1. Select New and type 'app' and select **application key**
 
@@ -38,6 +42,9 @@ You must create an application key to give the Kepware server authorization to c
 
 ![copy-key](./images/copy-key.png)
 
+
+
+</details>
 
 ## Data Collection
 
