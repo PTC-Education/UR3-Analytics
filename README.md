@@ -2,12 +2,12 @@
 
 Objective: Demonstrate the usage of Thingworx Analytics by using it to determine the weight of an object that a UR3 robot is holding.
 In this exercise, you will perform:
-<ul>
-<li>Setup - Dowload and configure files and devices</li>[Overview](https://github.com/PTC-Education/UR3-Analytics#Setup)
-<li>Data Collection - Collect joint amperage data from the UR3</li>
-<li>Modeling - Create a machine learning model</li>
-<li>Deployment - Perform automated real time predicitons</li>
-</ul>
+
+1. [Setup](https://github.com/PTC-Education/UR3-Analytics#Setup) - Download and configure files and devices
+2. [Data Collection](https://github.com/PTC-Education/UR3-Analytics#Data-Collection) - Collect joint amperage data from the UR3
+3. [Modeling](https://github.com/PTC-Education/UR3-Analytics#Modeling) - Create a machine learning model
+4. [Deployment](https://github.com/PTC-Education/UR3-Analytics#Deployment) - Perform automated real time predicitons
+
 
 ## Setup
 <li>UR Teaching Pendant</li>
