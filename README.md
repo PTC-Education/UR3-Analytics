@@ -47,7 +47,7 @@ You must create an application key to give the Kepware server authorization to c
 
 ![appkey_expiration](./images/set-expirationdate.png)
 
-4. Select the button to copy the app kay to the clipboard.
+4. Select the button to copy the application key to the clipboard.
 
 ![copy-key](./images/copy-key.png)
 
@@ -84,7 +84,8 @@ Create a new Modbus client by selecting **Installation**>**Fieldbus**>**MODBUS**
 
 
 <li>Thingworx Composer</li>
-import project file
+
+Navigate to your Thingworx composer on your browser
 
 
 
