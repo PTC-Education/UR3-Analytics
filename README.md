@@ -10,10 +10,33 @@ In this exercise, you will perform:
 
 
 ## Setup
+<li>Kepware</li>
+
+With Kepware installed, open the file called **UR3_kepwareConfig.opf**. This configuration file is setup to communicate with the UR3 but you will need to change a few things:
+    <ol>
+    <li>The Thingworx Host address.</li>
+    <li>The Thingworx port number.</li>
+    <li>The device ID or ip address.</li>
+    <li>The application key.</li>
+    </ol>
+    
+The Thingworx host address and port is the URL used to reach the server. An example of a URL is shown below.
+
+>http://servername:PORT/Thingworx/Composer
+
+In the case above, the host is **servername** and the port is **PORT**.</br>
+
+Input your host address and port number into the Kepware configuration by right clicking **Project**>**Properties**>**Thingworx**.
+
+![Kepware-Thingworx](./images/kepware-thingworx_host-port.png)
+
+
 <li>UR Teaching Pendant</li>
-Find ip address
+
+Find the ip address of your UR3 by selecting **Hamburger Menu**>**Settings**>**System**>**Network**. Choose **Static Address** as the network method. Choose an ip address and subnet mask which will allow the UR3 to be on the same network as your computer running the Kepware server.
+To read and write data from the UR3, we will use Modbus. Create a new Modbus unit by selecting **Installation**>**Fieldbus**>**MODBUS**>**Add MODBUS Unit**. 
 Set up modbus profile
-[screenshots]
+
 
 <li>Thingworx Composer</li>
 import project file
