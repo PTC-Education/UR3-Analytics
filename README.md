@@ -10,14 +10,14 @@ In this exercise, you will perform:
 
 
 ## Setup
-<li>Kepware</li>
+<li>Kepware Configuration</li>
 
 With Kepware installed, open the file called **UR3_kepwareConfig.opf**. This configuration file is setup to communicate with the UR3 but you will need to change a few things:
     <ol>
     <li>The Thingworx Host address.</li>
     <li>The Thingworx port number.</li>
-    <li>The device ID or ip address.</li>
     <li>The application key.</li>
+    <li>The device ID or ip address.</li>
     </ol>
     
 The Thingworx host address and port is the URL used to reach the server. An example of a URL is shown below.
@@ -26,26 +26,12 @@ The Thingworx host address and port is the URL used to reach the server. An exam
 
 In the case above, the host is **servername** and the port is **PORT**.</br>
 
-Input your host address and port number into the Kepware configuration by right clicking **Project**>**Properties**>**Thingworx**.
-
-![Kepware-Thingworx](./images/kepware-thingworx_host-port.png)
-
-
-<li>UR Teaching Pendant</li>
-
-Find the ip address of your UR3 by selecting **Hamburger Menu**>**Settings**>**System**>**Network**. Choose **Static Address** as the network method. Choose an ip address and subnet mask which will allow the UR3 to be on the same network as your computer running the Kepware server.
-To read and write data from the UR3, we will use Modbus. Create a new Modbus unit by selecting **Installation**>**Fieldbus**>**MODBUS**>**Add MODBUS Unit**. 
-Set up modbus profile
-
-
-<li>Thingworx Composer</li>
-import project file
-
 <details>
-<summary>Create appkey</summary>
+<summary>Create an Application Key in Thingworx</summary>
 <br>
 
-You must create an application key to give the Kepware server authorization to communicate with the Thingworx server. 
+You must create an application key to give the Kepware server authorization to communicate with the Thingworx server. Navigate to your Thingworx composer on your browser.
+
 1. Select New and type 'app' and select **application key**
 
 ![Create Appkey](./images/create-key.png)
@@ -66,6 +52,42 @@ You must create an application key to give the Kepware server authorization to c
 ![copy-key](./images/copy-key.png)
 
 </details>
+
+Right click **Project** and select **Properties**>**Thingworx**. Input your host address and port number into the **Host** and **Port** fields. Paste your application key into the **application key** field.
+
+
+Click **Apply** and **OK**.
+
+![Kepware-Thingworx](./images/kepware-thingworx_highlights.png)
+
+On the UR3 teaching pendant, find the ip address of your UR3 by selecting **Hamburger Menu**>**Settings**>**System**>**Network**. Choose **Static Address** as the network method. Choose an ip address and subnet mask which will allow the UR3 to be on the same network as your computer running the Kepware server.
+
+![UR3-network](./images/network_highlights.png)
+
+In the Kepware configuration, Under **Project**>**Connectivity**>**UR_Channel**, Right click **UR3** and select **Properties**>**General**. Enter the ip address into the **ID** field.
+
+![UR3-device](./images/device_ip_highlights.png)
+
+<li>UR Teaching Pendant</li>
+
+Create a new Modbus client by selecting **Installation**>**Fieldbus**>**MODBUS**>**Add MODBUS Unit**. Enter the same ip address into the **IP Address** field. Add these modbus signals by selecting **Add New Signal**.
+
+![UR3-device](./images/modbus.png)
+
+|   Type	        |   Address |   Name	        |
+|---	            |---	    |---	            |
+|   Register Input	|   128	    |   TWX_Weight	    |
+|   Digital Input	|   129	    |   AnalysisDone    |
+|   Register Output	|   130 	|   ObjectWeight    |
+|   Register Output	|   131 	|   position	    |
+|   Digital Output	|   132 	|   SortingDone	    |
+
+
+
+<li>Thingworx Composer</li>
+import project file
+
+
 
 
 
