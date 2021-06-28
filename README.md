@@ -70,9 +70,7 @@ In the Kepware configuration, Under **Project**>**Connectivity**>**UR_Channel**,
 
 <li>UR Teaching Pendant</li>
 
-Create a new Modbus client by selecting **Installation**>**Fieldbus**>**MODBUS**>**Add MODBUS Unit**. Enter the same ip address into the **IP Address** field. Add these modbus signals by selecting **Add New Signal**.
-
-![UR3-device](./images/modbus.png)
+Create a new Modbus client by selecting **Installation**>**Fieldbus**>**MODBUS**>**Add MODBUS Unit**. Enter the same ip address into the **IP Address** field. Add the following modbus signals by selecting **Add New Signal**.
 
 |   Type	        |   Address |   Name	        |
 |---	            |---	    |---	            |
@@ -82,6 +80,7 @@ Create a new Modbus client by selecting **Installation**>**Fieldbus**>**MODBUS**
 |   Register Output	|   131 	|   position	    |
 |   Digital Output	|   132 	|   SortingDone	    |
 
+![UR3-device](./images/modbus.png)
 
 
 <li>Thingworx Composer</li>
