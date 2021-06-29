@@ -10,6 +10,10 @@ In this exercise, you will perform:
 
 ![map](./images/UR3-Analytics-TWX-Deployment.png)
 
+![robot](./images/UR_singlePos.PNG)
+
+
+
 
 ## Setup
 
