@@ -10,6 +10,18 @@ In this exercise, you will perform:
 
 
 ## Setup
+
+<li>Getting Started</li>
+
+To do this exercise, you need access to:
+    <ol>
+    <li>A computer running Windows 10.</li>
+    <li>Access to a Thingworx instance.</li>
+    <li>A UR robot</li>
+    </ol>
+    
+Please download the folder called, UR3-Analytics.
+
 <li>Kepware Configuration</li>
 
 With Kepware installed, open the file called **UR3_kepwareConfig.opf**. This configuration file is setup to communicate with the UR3 but you will need to change a few things:
