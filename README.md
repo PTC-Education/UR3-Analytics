@@ -97,7 +97,7 @@ Create a new Modbus client by selecting **Installation**>**Fieldbus**>**MODBUS**
 
 <li>Thingworx Composer</li>
 
-Navigate to your Thingworx composer on your browser
+Navigate to your Thingworx composer on your browser. 
 
 
 
