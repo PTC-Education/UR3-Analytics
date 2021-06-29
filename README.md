@@ -8,6 +8,8 @@ In this exercise, you will perform:
 3. [Modeling](https://github.com/PTC-Education/UR3-Analytics#Modeling) - Create a machine learning model
 4. [Deployment](https://github.com/PTC-Education/UR3-Analytics#Deployment) - Perform automated real time predicitons
 
+![map](./images/map.png)
+
 
 ## Setup
 
