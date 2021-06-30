@@ -62,7 +62,7 @@ You must create an application key to give the Kepware server authorization to c
 
 ![appkey_expiration](./images/set-expirationdate.png)
 
-4. Select **Save** and the application key will appear. Select the copy button to the right of the application key to copy it to the clipboard.
+4. Select **Save** and the application key will appear under **Key ID**. Select the copy button to the right of the **Key ID** to copy it to the clipboard.
 
 ![copy-key](./images/copy-key.png)
 
