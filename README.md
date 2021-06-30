@@ -12,16 +12,13 @@ In this exercise, you will perform:
 
 ![robot](./images/UR_singlePos.PNG)
 
-
-
-
 ## Setup
 
 <li>Getting Started</li>
 
-To do this exercise, you need access to:
+To do this exercise, you need:
     <ol>
-    <li>A computer running Windows 10.</li>
+    <li>Thingworx Kepware installed.</li>
     <li>Access to a Thingworx instance.</li>
     <li>A UR robot</li>
     </ol>
