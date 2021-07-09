@@ -90,10 +90,10 @@ Create a new Modbus client by selecting **Installation**>**Fieldbus**>**MODBUS**
 |   Type	        |   Address |   Name	        |
 |---	            |---	    |---	            |
 |   Register Input	|   128	    |   TWX_Weight	    |
-|   Digital Input	|   129	    |   AnalysisDone    |
+|   Register Input	|   129	    |   AnalysisDone    |
 |   Register Output	|   130 	|   ObjectWeight    |
 |   Register Output	|   131 	|   position	    |
-|   Digital Output	|   132 	|   SortingDone	    |
+|   Register Output	|   132 	|   SortingDone	    |
 
 ![UR3-device](./images/modbus.png)
 
