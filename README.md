@@ -26,8 +26,11 @@ To do this exercise, you need:
 Please download the folder, [main](main).
 
 
+This guide assumes basic Universal robot operation knowledge.
 
-<li>Kepware Configuration</li>
+
+
+### Kepware Configuration
 
 With Kepware installed, open the file called **UR3_kepwareConfig.opf**. This configuration file is setup to communicate with the UR3 but you will need to change a few things:
     <ol>
@@ -43,21 +46,20 @@ The Thingworx host address and port is the URL used to reach the server. An exam
 
 In the case above, the host is **servername** and the port is **PORT**.</br>
 
-<li>Thingworx Composer</li>
+### Thingworx Composer
 
-Navigate to your Thingworx composer on your browser. Click **Import/Export** and select the file, **UR3-project.twx**. 
+Navigate to your Thingworx composer on your browser. Click **Import/Export** and and browse for the file, **UR3-project.twx** on your hardrive. 
 
 
-Click **Import**.
-
-![import-thingworx](./images/import-thingworx.png)
-
+After you select you file, click **Import**.
 
 This file contains the **UR3-analytics** project. Navigate to the project in in composer by searching for it in the search bar.
 
-![search-thingworx](./images/search-thingworx.png)
+![search-thingworx](images/search-thingworx.gif)
 
-Confirm that each of the entities shown in the image below are present.
+Confirm that each of the entities (except UR3-appkey) shown in the image below are present. 
+
+![project-entities](images/ur3project-entities.png)
 
 <details>
 <summary>Create an Application Key in Thingworx</summary>
@@ -101,7 +103,7 @@ In the Kepware configuration, Under **Project**>**Connectivity**>**UR_Channel**,
 
 ![UR3-device](./images/device_ip_highlights.png)
 
-<li>UR Teaching Pendant</li>
+### UR Teaching Pendant
 
 Create a new Modbus client by selecting **Installation**>**Fieldbus**>**MODBUS**>**Add MODBUS Unit**. Enter the same ip address into the **IP Address** field. Add the following modbus signals by selecting **Add New Signal**.
 
@@ -120,70 +122,34 @@ Create a new Modbus client by selecting **Installation**>**Fieldbus**>**MODBUS**
 
 ## Data Collection
 
-<details>
-<summary>UR3 Setup</summary>
-<br>
+### UR3 Data Collection
+
+Download the following programs to a USB stick
+>Weight_training.urp
+
+
+>Weight_detection.urp
+
+Insert the USB stick into the UR teaching pendant. On the teaching pendant, open the **Weight_training.urp** program. 
+
+
+**Overview:** The purpose of this program is to collect training data from the robot. You will input the weight of an object and hand it to the robot. The data must contain the weight so that the machine learning algorithms may find a relationship between the object weight and the joint amperage. After receiving the weight, the robot will move to a specified position and hold for 30 seconds to gather the range of changing amperage. 
   
-  <ul>
-<li>Setup Modbus profile on teaching pendant</li>
-<li>Download UR programs</li>
-<li>Get IP address for Kepware</li>
-    For this connection to work, you will need to change the IP address of the target device in the Kepware settings to the IP address of your UR3 robot. The IP address of your robot is found on the teaching pendant under **Hamburger menu>Settings>Network**. <br />
+<ul>  
+<li>Have 5 different weights on hand for the robot to hold. Weights cannot exceed the max weight specified by the robot. For the UR3, the maximum weight is 6.6 lbs or 3 kg.</li>
+  
+<li>Navigate to the mashup in Thingworx composer by searching, UR3-analyticsmashup. This mashup will be useful during the next steps. Select View Mashup. When you are ready to start logging amperage data from the robot, select Log data.</li>
+  
+
+<li>Run the program by pressing the play button in the bottom right. When inputting the weight, you can provide a number up to 3 decimal places (1.432 lbs).</li>
+
+
+<li>When the program asks to place a weight into the robot gripper, hold the object in between the jaws and press continue on the pendant. The program will wait 1 second and then close the gripper.</li>
+   
+<li>Run the program with each of the 5 objects.</li>
 </ul>
-  
-  </details>
-<details>
-<summary>Thingworx Setup</summary>
-<br>
-  We will read and send data bewteen the UR3 and Thingworx with Kepware.<br />
-  First download the **Remote Thing** file and the **Gateway Thing** file provided below and import it into your Thingworx instance.<br />
-  
-  > [UR3_thing](https://www.google.com) (Remote Thing)
-  > [UR3_gateway](https://www.google.com) (Gateway)
-  
-  In Thingworx, select **Import/Export** and import the UR3_Thing and the UR3_gateway<br />
-
-Download the Kepware configuration file shown below.<br />
-  
-  > [UR3_kepwareConfig.opf](https://www.google.com)
-  
-  
- Inside of Kepware, right click on UR3 and select properties. Under **General>ID**, input the IP address of your UR3.<br />
-  
-  Create an app key in Thingworx and input the app key into Kepware.<br />
-  
-  Ensure all thing properties are good quality in Thingworx.<br />
- 
-  
-  </details>
-  
-  <details>
-<summary>Onshape Model data</summary>
-<br>
-  
-  Create a digital twin in Onshape which mirrors the robots positions.
-  
-  In addition to adding joint data to the model, we will add object distance from base.<br />
-  
-  </details>
 
   
-  <details>
-<summary>Collect Data</summary>
-<br>
-  
-Have 5 different weights on hand for the robot to hold. Weights cannot exceed the max weight specified by the robot.<br />
-  
-  Run the program called, "weight_training," from UR teaching pendant.<br />
-  The teaching pendant will require user input throughout the program. When the program asks to place a weight into the robot gripper, hold the object in between the jaws and press continue on the pendant. The program will wait 1 second and then close the gripper.<br />
-  
-  It will then perform the movements to generate the data needed to train the machine learning model. 
-  
-  Run the program with each of the 5 objects.<br />
-  
-  </details>
-  
-
 ## Modeling
   <details>
 <summary>Export and clean Data</summary>
@@ -205,7 +171,7 @@ Create model using default settings.<br />
   
   </details>
   
-  ## Deployment
+## Deployment
   
    <details>
 <summary>Connect inputs and output to thing properties</summary>
