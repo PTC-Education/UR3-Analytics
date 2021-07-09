@@ -125,10 +125,10 @@ Create a new Modbus client by selecting **Installation**>**Fieldbus**>**MODBUS**
 ### UR3 Data Collection
 
 Download the following programs to a USB stick
->Weight_training.urp
+>[Weight_training.urp](main/Weight_training.urp)
 
 
->Weight_detection.urp
+>[Weight_detection.urp](main/Weight_Detection.urp)
 
 Insert the USB stick into the UR teaching pendant. On the teaching pendant, open the **Weight_training.urp** program. 
 
