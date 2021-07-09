@@ -23,7 +23,9 @@ To do this exercise, you need:
     <li>A UR robot</li>
     </ol>
     
-Please download the folder called, UR3-Analytics.
+Please download the folder, [main](main).
+
+
 
 <li>Kepware Configuration</li>
 
@@ -40,6 +42,21 @@ The Thingworx host address and port is the URL used to reach the server. An exam
 >http://servername:PORT/Thingworx/Composer
 
 In the case above, the host is **servername** and the port is **PORT**.</br>
+
+<li>Thingworx Composer</li>
+
+Navigate to your Thingworx composer on your browser. Click **Import/Export** and select the file, **UR3-project.twx**. 
+
+
+Click **Import**.
+
+![import-thingworx](./images/import-thingworx.png)
+
+
+This file contains the **UR3-analytics** project. Navigate to the project in in composer by searching for it in the search bar.
+
+
+Confirm that each of the entities shown in the image below are present.
 
 <details>
 <summary>Create an Application Key in Thingworx</summary>
@@ -96,12 +113,6 @@ Create a new Modbus client by selecting **Installation**>**Fieldbus**>**MODBUS**
 |   Register Output	|   132 	|   SortingDone	    |
 
 ![UR3-device](./images/modbus.png)
-
-
-<li>Thingworx Composer</li>
-
-Navigate to your Thingworx composer on your browser. 
-
 
 
 
