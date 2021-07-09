@@ -55,6 +55,7 @@ Click **Import**.
 
 This file contains the **UR3-analytics** project. Navigate to the project in in composer by searching for it in the search bar.
 
+![search-thingworx](./images/search-thingworx.png)
 
 Confirm that each of the entities shown in the image below are present.
 
