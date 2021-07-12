@@ -118,26 +118,26 @@ Create a new Modbus client by selecting **Installation**>**Fieldbus**>**MODBUS**
 ![UR3-device](./images/modbus.png)
 
 
-
-
-## Data Collection
-
-### UR3 Data Collection
-
-Download the following program to a USB stick:
-
+Download the following programs to a USB stick from your computer:
 
 [Weight_training.urp](main/Weight_training.urp)
 
+[Weight_detection.urp](main/Weight_Detection.urp)
+
+
+Insert the USB stick into the teaching pendant, and save the programs.
+
+
+## UR3 Data Collection
 
 <ol>
-    <li>Insert the USB stick into the UR teaching pendant. On the teaching pendant, load the Weight_training.urp program.</li>
+    <li>On the teaching pendant, load the Weight_training.urp program.</li>
     <li>Navigate to the mashup in Thingworx composer by searching, UR3-analyticsmashup. This mashup will be useful during the next steps. Select View Mashup.</li>
-    <li>With 5 well distributed weights in the range of 0-6.6 lbs, press the play button to run the program.</li>
+    <li>With 5 well distributed weights in the range of 0-6.6 lbs nearby, press the play button to run the program.</li>
     <li>Follow the prompts on the teaching pendant:
 <ul>
     <li>Input object weight in lbs. (Up to 3 decimal places. Ex: 1.542 lbs).</li>
-    <li>Hold object inside the gripper while you simultaneously press continue. The gripper will closer, holding the object</li>
+    <li>When prompted, hold object inside the gripper while you simultaneously press continue. The gripper will closer, holding the object</li>
     <li>Weight for the program to finish, select yes to remove object and the program will loop, asking for a new object.</li>
     <li>Repeat this until you have gven the robot at least 5 objects</li>
 </ul>
@@ -147,26 +147,31 @@ Download the following program to a USB stick:
   
 ## Modeling
 
+### Background information
+In Thingworx, you can log properties in a remote thing by selecting the property and checking the 'logged' box. In order to log properties to a value stream, the remote thing must have a value stream entity specified, in this case, UR3-valuestream is selected. The property value is logged to the value stream whenever the value changes.
 
-  
+
+
+
+
+
+
+
+
 ## Deployment
-    
-    >[Weight_detection.urp](main/Weight_Detection.urp)
+     
+   <ol>
+    <li>On the teaching pendant, load the Weight_Detection.urp program.</li>
+    <li>Navigate to the mashup in Thingworx composer by searching, 'UR3-analyticsmashup'. This mashup will be useful during the next steps. Select View Mashup.</li>
+    <li>With 5 weights in the range of 0-6.6 lbs nearby (these should be different weights than what you used in Data Collection), press the play button to run the program.</li>
+    <li>Follow the prompts on the teaching pendant:
+<ul>
+    <li>When prompted, hold object inside the gripper while you simultaneously press continue. The gripper will closer, holding the object</li>
+    <li>The robot will move to the same position as it did when training, but this time it will be detecting the weight. The weight will appear on the teaching pendant screen as a popup after a few seconds.</li>
+    <li>The robot will sort the object by weight, placing it into 1 of 3 piles. Once above the pile, the robot will move down slowly until it makes contact. Upon making contact, the robot will release the object.</li>
+    <li>On completion of the sorting, select 'yes' to remove object and the program will loop, asking for a new object.</li>
+    <li>Repeat this as many times as you want. It might be interesting to compare the accuracy of the predicitons to the actual object weight.</li>
+</ul>
+</li>
+</ol>
   
-   <details>
-<summary>Connect inputs and output to thing properties</summary>
-<br>
-  
-Connect predictions to UR3_thing properties.<br />
-  
-  </details>
-  
-  <details>
-<summary>Testing</summary>
-<br>
-  
-Run program called, "weight_detection."<br />
-Predicted values will appear on teaching pendant and in Thingworx.<br />
-Test the model by giving robot unseen weights.<br />
-  
-  </details>
