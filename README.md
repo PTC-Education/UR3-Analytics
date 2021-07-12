@@ -147,7 +147,7 @@ Insert the USB stick into the teaching pendant, and save the programs.
   
 ## Modeling
 
-### Background information
+### Data Understanding
 In Thingworx, you can log properties in a remote thing by selecting the property and checking the 'logged' box. In order to log properties to a value stream, the remote thing must have a value stream entity specified, in this case, UR3-valuestream is selected. The property value is logged to the value stream whenever the value changes.
 
 
@@ -179,8 +179,20 @@ Though we are logging 7 properties with each data change, we will only use a sma
         </ul>
     </li>
 </ul>
+
 A service called **QueryPropertyHistory** retrieves the logged property data. Since we only want certain data, we defined a query parameter which filters out the unwanted data when running this service. This query is a property in UR3-remotething called **queryFilter**. This query filters the data according to the cases presented above.
 
+To train a machine learning model, we will use the Thingworx Analytics REST API services. The model training service will use the data retrieved after running the QueryPropertyHistory service with the aforementioned query as a parameter. We specify multiple linear regresison so that we can predict weights that the robot has not held before.
+
+
+### Train Model
+
+If you have trained 5 wieghts, you should see at least 5 clusters of points on the line chart in the UR3-analyticsmashup. Confirm this before continuing on. It may look similar to the image below.
+
+[SCREENSHOT OF MY LINE CHART](link.png)
+
+
+If you have confirmed that you have successfully logged the data of at least 5 weights in a well distrubted range of 0-6.6 lbs, you can now select **Train Model** in the UR3-analyticsmashup. A JobId is returned from the service you executed when clicking that button and a new jobId string is saved to the **id** property. (This **id** is used in the service which performs the real time scoring.) 
 
 
 
