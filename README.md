@@ -151,9 +151,35 @@ Insert the USB stick into the teaching pendant, and save the programs.
 In Thingworx, you can log properties in a remote thing by selecting the property and checking the 'logged' box. In order to log properties to a value stream, the remote thing must have a value stream entity specified, in this case, UR3-valuestream is selected. The property value is logged to the value stream whenever the value changes.
 
 
+Kepware is set to scan for new property values every 10 ms, which can lead to many values being logged. In our case, we are only interested in certain wos of data, and not every single new value that logs to the value stream.
 
 
-
+Though we are logging 7 properties with each data change, we will only use a small portion of this data to make the prediction. The data that will help us create the best machine learning model we can will match the following conditions:
+<ul>
+    <li>The robot must be in a specific position.
+        <ul>
+            <li>We want to isolate the relationship between the joint amperage and the weight of the object.</li>
+            <li>The robot program sets the General_position property to 1 when in position and 0 when not in the position.</li>
+        </ul>
+    </li>
+    <li>Only 4 of the 6 joints are meaningful.
+            <ul>
+            <li>In the chosen robot position, joints 1 and 6 are not helpful because their amperage hardly changes with varying payloads.</li>
+        </ul>
+    </li>
+    <li>Negative amperage values are determined by substracting the value itself from 65535.
+            <ul>
+            <li>In the position we chose, the amperage is not negative or close to zero. Any values greater than 60000 should be irrelevant in this situation.</li>
+        </ul>
+    </li>
+    <li>Velocity of all joints must be zero.
+            <ul>
+            <li>We made a decision to predict the weight while the robot was still. This makes data captured with the robot moving irrelevant.</li>
+            <li>Within UR3_remotething, a subscription sets the robot_moving boolean property to true or false, based on the joint velocity values</li>
+        </ul>
+    </li>
+</ul>
+A service called **QueryPropertyHistory** retrieves the logged property data. Since we only want certain data, we defined a query parameter which filters out the unwanted data when running this service. This query is a property in UR3-remotething called **queryFilter**. This query filters the data according to the cases presented above.
 
 
 
