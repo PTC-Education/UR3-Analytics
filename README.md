@@ -124,54 +124,34 @@ Create a new Modbus client by selecting **Installation**>**Fieldbus**>**MODBUS**
 
 ### UR3 Data Collection
 
-Download the following programs to a USB stick
->[Weight_training.urp](main/Weight_training.urp)
+Download the following program to a USB stick:
 
 
->[Weight_detection.urp](main/Weight_Detection.urp)
-
-Insert the USB stick into the UR teaching pendant. On the teaching pendant, open the **Weight_training.urp** program. 
+[Weight_training.urp](main/Weight_training.urp)
 
 
-**Overview:** The purpose of this program is to collect training data from the robot. You will input the weight of an object and hand it to the robot. The data must contain the weight so that the machine learning algorithms may find a relationship between the object weight and the joint amperage. After receiving the weight, the robot will move to a specified position and hold for 30 seconds to gather the range of changing amperage. 
-  
-<ul>  
-<li>Have 5 different weights on hand for the robot to hold. Weights cannot exceed the max weight specified by the robot. For the UR3, the maximum weight is 6.6 lbs or 3 kg.</li>
-  
-<li>Navigate to the mashup in Thingworx composer by searching, UR3-analyticsmashup. This mashup will be useful during the next steps. Select View Mashup. When you are ready to start logging amperage data from the robot, select Log data.</li>
-  
-
-<li>Run the program by pressing the play button in the bottom right. When inputting the weight, you can provide a number up to 3 decimal places (1.432 lbs).</li>
-
-
-<li>When the program asks to place a weight into the robot gripper, hold the object in between the jaws and press continue on the pendant. The program will wait 1 second and then close the gripper.</li>
-   
-<li>Run the program with each of the 5 objects.</li>
+<ol>
+    <li>Insert the USB stick into the UR teaching pendant. On the teaching pendant, load the Weight_training.urp program.</li>
+    <li>Navigate to the mashup in Thingworx composer by searching, UR3-analyticsmashup. This mashup will be useful during the next steps. Select View Mashup.</li>
+    <li>With 5 well distributed weights in the range of 0-6.6 lbs, press the play button to run the program.</li>
+    <li>Follow the prompts on the teaching pendant:
+<ul>
+    <li>Input object weight in lbs. (Up to 3 decimal places. Ex: 1.542 lbs).</li>
+    <li>Hold object inside the gripper while you simultaneously press continue. The gripper will closer, holding the object</li>
+    <li>Weight for the program to finish, select yes to remove object and the program will loop, asking for a new object.</li>
+    <li>Repeat this until you have gven the robot at least 5 objects</li>
 </ul>
+</li>
+</ol>
 
   
 ## Modeling
-  <details>
-<summary>Export and clean Data</summary>
-<br>
-  
-Export the data into a CSV.<br />
-Open the CSV file in Micosoft Excel<br />
-Delete bad data<br />
-  
-  </details>
-  
-  <details>
-<summary>Thingworx Analytics</summary>
-<br>
-  
-Upload data into Thingworx analytics.<br />
-Create model using default settings.<br />
+
 
   
-  </details>
-  
 ## Deployment
+    
+    >[Weight_detection.urp](main/Weight_Detection.urp)
   
    <details>
 <summary>Connect inputs and output to thing properties</summary>
