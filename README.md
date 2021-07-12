@@ -137,7 +137,7 @@ Insert the USB stick into the teaching pendant, and save the programs.
     <li>Follow the prompts on the teaching pendant:
 <ul>
     <li>Input object weight in lbs. (Up to 3 decimal places. Ex: 1.542 lbs).</li>
-    <li>When prompted, hold object inside the gripper while you simultaneously press continue. The gripper will closer, holding the object</li>
+    <li>When prompted, hold object inside the gripper while you simultaneously press continue. The gripper will closer, holding the object.</li>
     <li>Weight for the program to finish, select yes to remove object and the program will loop, asking for a new object.</li>
     <li>Repeat this until you have gven the robot at least 5 objects</li>
 </ul>
