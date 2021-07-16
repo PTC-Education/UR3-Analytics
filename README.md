@@ -103,7 +103,7 @@ In the Kepware configuration, Under **Project**>**Connectivity**>**UR_Channel**,
 
 
 
-### Thingworx Composer
+### Import UR3-project to Thingworx
 
 Navigate to your Thingworx composer on your browser. Click **Import/Export** and and browse for the file, **UR3-project.twx** on your hardrive. 
 
@@ -114,9 +114,9 @@ This file contains the **UR3-analytics** project. Navigate to the project in in 
 
 ![search-thingworx](images/search-thingworx.gif)
 
-Confirm that each of the entities (except UR3-appkey) shown in the image below are present. 
+Confirm that each of the entities shown in the image below are present. 
 
-![project-entities](images/ur3project-entities.png)
+![project-entities](images/ur3-project.png)
 
 ### UR Teaching Pendant
 
