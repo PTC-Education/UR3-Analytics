@@ -21,6 +21,7 @@ To do this exercise, you need:
     <li>Thingworx Kepware installed.</li>
     <li>Access to a Thingworx 9</li>
     <li>A UR robot</li>
+    <li>A USB drive</li>
     </ol>
     
 Please download the folder, [main](main).
@@ -33,6 +34,7 @@ This guide assumes basic Universal robot operation knowledge.
 ### Kepware Configuration
 
 With Kepware installed, open the file called **UR3_kepwareConfig.opf**. This configuration file is setup to communicate with the UR3 but you will need to change a few things. We will find each item and then show you how add them to the Kepware configuration. 
+
 
 <details>
 <summary>The Thingworx Host address and port number</summary>
@@ -85,7 +87,7 @@ On the UR3 teaching pendant, find the ip address of your UR3 by selecting **Hamb
 
 </details>
 
-[//]: # (comment)
+
 
 Now that you have found the items we need to add to the kepware configuration, lets go ahead and add them. Right click **Project** and select **Properties**>**Thingworx**. Input your host address and port number into the **Host** and **Port** fields. Paste your application key into the **application key** field.
 
@@ -100,7 +102,7 @@ In the Kepware configuration, Under **Project**>**Connectivity**>**UR_Channel**,
 ![UR3-device](./images/device_ip_highlights.png)
 
 
-
+*************************************************************
 
 
 ### Import UR3-project to Thingworx
@@ -116,9 +118,13 @@ This file contains the **UR3-analytics** project. Navigate to the project in in 
 
 Confirm that each of the entities shown in the image below are present. 
 
-![project-entities](images/ur3-project.png)
+![project-entities](images/ur3-project.PNG)
 
-### UR Teaching Pendant
+
+***************************************************************
+
+
+### UR Teaching Pendant Setup
 
 Create a new Modbus client by selecting **Installation**>**Fieldbus**>**MODBUS**>**Add MODBUS Unit**. Enter the same ip address into the **IP Address** field. Add the following modbus signals by selecting **Add New Signal**.
 
@@ -130,18 +136,18 @@ Create a new Modbus client by selecting **Installation**>**Fieldbus**>**MODBUS**
 |   Register Output	|   131 	|   position	    |
 |   Register Output	|   132 	|   SortingDone	    |
 
+
 ![UR3-device](./images/modbus.png)
 
-
-Download the following programs to a USB stick from your computer:
+Download the following programs to a USB drive from your computer:
 
 [Weight_training.urp](main/Weight_training.urp)
 
 [Weight_detection.urp](main/Weight_Detection.urp)
 
+Insert the USB drive into the teaching pendant, and save the programs.
 
-Insert the USB stick into the teaching pendant, and save the programs.
-
+******************************************************************************************
 
 ## UR3 Data Collection
 
