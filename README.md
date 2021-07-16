@@ -210,7 +210,7 @@ To train a machine learning model, we will use the Thingworx Analytics REST API 
 
 If you have trained 5 wieghts, you should see at least 5 clusters of points on the line chart in the UR3-analyticsmashup. Confirm this before continuing on. It may look similar to the image below.
 
-[SCREENSHOT OF MY LINE CHART](link.png)
+[line chart](images/linechart.png)
 
 
 If you have confirmed that you have successfully logged the data of at least 5 weights in a well distrubted range of 0-6.6 lbs, you can now select **Train Model** in the UR3-analyticsmashup. A JobId is returned from the service you executed when clicking that button and a new jobId string is saved to the **id** property. (This **id** is used in the service which performs the real time scoring.) 
