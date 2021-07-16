@@ -42,7 +42,7 @@ With Kepware installed, open the file called **UR3_kepwareConfig.opf**. This con
     
 We will find each item first and then show you how add them to the Kepware configuration.
  
-### The Thingworx Host address and port number
+<li>The Thingworx Host address and port number</li>
     
 The Thingworx host address and port is the URL used to reach the server. An example of a URL is shown below.
 
@@ -50,7 +50,7 @@ The Thingworx host address and port is the URL used to reach the server. An exam
 
 In the case above, the host is **servername** and the port is **PORT**. (If a port is not shown in the URL, the default is 443.)</br>
 
-### The application key
+<li>The application key</li>
 <details>
 <summary>Create an Application Key in Thingworx</summary>
 <br>
@@ -78,6 +78,16 @@ You must create an application key to give the Kepware server authorization to c
 
 </details>
 
+<li>The device ID or ip address</li>
+
+On the UR3 teaching pendant, find the ip address of your UR3 by selecting **Hamburger Menu**>**Settings**>**System**>**Network**. Choose **Static Address** as the network method. Choose an ip address and subnet mask which will allow the UR3 to be on the same network as your computer running the Kepware server.
+
+![UR3-network](./images/network_highlights.png)
+
+
+***********************************************************************************
+
+
 Right click **Project** and select **Properties**>**Thingworx**. Input your host address and port number into the **Host** and **Port** fields. Paste your application key into the **application key** field.
 
 
@@ -85,15 +95,12 @@ Click **Apply** and **OK**.
 
 ![Kepware-Thingworx](./images/kepware-thingworx_highlights.png)
 
-On the UR3 teaching pendant, find the ip address of your UR3 by selecting **Hamburger Menu**>**Settings**>**System**>**Network**. Choose **Static Address** as the network method. Choose an ip address and subnet mask which will allow the UR3 to be on the same network as your computer running the Kepware server.
-
-![UR3-network](./images/network_highlights.png)
 
 In the Kepware configuration, Under **Project**>**Connectivity**>**UR_Channel**, Right click **UR3** and select **Properties**>**General**. Enter the ip address into the **ID** field.
 
 ![UR3-device](./images/device_ip_highlights.png)
 
-### The device ID or ip address
+
 
 
 
