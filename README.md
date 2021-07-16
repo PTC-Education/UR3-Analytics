@@ -14,12 +14,12 @@ In this exercise, you will perform:
 
 ## Setup
 
-<li>Getting Started</li>
+### Getting Started
 
 To do this exercise, you need:
     <ol>
     <li>Thingworx Kepware installed.</li>
-    <li>Access to a Thingworx instance.</li>
+    <li>Access to a Thingworx 9</li>
     <li>A UR robot</li>
     </ol>
     
