@@ -40,27 +40,17 @@ With Kepware installed, open the file called **UR3_kepwareConfig.opf**. This con
     <li>The device ID or ip address.</li>
     </ol>
     
+We will find each item first and then show you how add them to the Kepware configuration.
+ 
+### The Thingworx Host address and port number
+    
 The Thingworx host address and port is the URL used to reach the server. An example of a URL is shown below.
 
 >http://servername:PORT/Thingworx/Composer
 
-In the case above, the host is **servername** and the port is **PORT**.</br>
+In the case above, the host is **servername** and the port is **PORT**. (If a port is not shown in the URL, the default is 443.)</br>
 
-### Thingworx Composer
-
-Navigate to your Thingworx composer on your browser. Click **Import/Export** and and browse for the file, **UR3-project.twx** on your hardrive. 
-
-
-After you select you file, click **Import**.
-
-This file contains the **UR3-analytics** project. Navigate to the project in in composer by searching for it in the search bar.
-
-![search-thingworx](images/search-thingworx.gif)
-
-Confirm that each of the entities (except UR3-appkey) shown in the image below are present. 
-
-![project-entities](images/ur3project-entities.png)
-
+### The application key
 <details>
 <summary>Create an Application Key in Thingworx</summary>
 <br>
@@ -102,6 +92,25 @@ On the UR3 teaching pendant, find the ip address of your UR3 by selecting **Hamb
 In the Kepware configuration, Under **Project**>**Connectivity**>**UR_Channel**, Right click **UR3** and select **Properties**>**General**. Enter the ip address into the **ID** field.
 
 ![UR3-device](./images/device_ip_highlights.png)
+
+### The device ID or ip address
+
+
+
+### Thingworx Composer
+
+Navigate to your Thingworx composer on your browser. Click **Import/Export** and and browse for the file, **UR3-project.twx** on your hardrive. 
+
+
+After you select you file, click **Import**.
+
+This file contains the **UR3-analytics** project. Navigate to the project in in composer by searching for it in the search bar.
+
+![search-thingworx](images/search-thingworx.gif)
+
+Confirm that each of the entities (except UR3-appkey) shown in the image below are present. 
+
+![project-entities](images/ur3project-entities.png)
 
 ### UR Teaching Pendant
 
