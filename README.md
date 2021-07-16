@@ -81,7 +81,7 @@ You must create an application key to give the Kepware server authorization to c
 <br>
 
 
-On the UR3 teaching pendant, find the ip address of your UR3 by selecting **Hamburger Menu**>**Settings**>**System**>**Network**. Choose **Static Address** as the network method. Choose an ip address and subnet mask which will allow the UR3 to be on the same network as your computer running the Kepware server.
+Connect your UR3 controller to your local network with an ethernet cable. On the UR3 teaching pendant, find the ip address of your UR3 by selecting **Hamburger Menu**>**Settings**>**System**>**Network**. Choose **DHCP** and once the robot is automatically assigned an ip address, select **Static Address** as the network method. This will keep the ip address from ever changing. The computer running your Kepware server should be on the same network as the UR3.
 
 ![UR3-network](./images/network_highlights.png)
 
