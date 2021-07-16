@@ -32,17 +32,11 @@ This guide assumes basic Universal robot operation knowledge.
 
 ### Kepware Configuration
 
-With Kepware installed, open the file called **UR3_kepwareConfig.opf**. This configuration file is setup to communicate with the UR3 but you will need to change a few things:
-    <ol>
-    <li>The Thingworx Host address.</li>
-    <li>The Thingworx port number.</li>
-    <li>The application key.</li>
-    <li>The device ID or ip address.</li>
-    </ol>
-    
-We will find each item first and then show you how add them to the Kepware configuration.
- 
-<li>The Thingworx Host address and port number</li>
+With Kepware installed, open the file called **UR3_kepwareConfig.opf**. This configuration file is setup to communicate with the UR3 but you will need to change a few things. We will find each item and then show you how add them to the Kepware configuration. 
+
+<details>
+<summary>The Thingworx Host address and port number</summary>
+<br>
     
 The Thingworx host address and port is the URL used to reach the server. An example of a URL is shown below.
 
@@ -50,9 +44,10 @@ The Thingworx host address and port is the URL used to reach the server. An exam
 
 In the case above, the host is **servername** and the port is **PORT**. (If a port is not shown in the URL, the default is 443.)</br>
 
-<li>The application key</li>
+</details>
+    
 <details>
-<summary>Create an Application Key in Thingworx</summary>
+<summary>The application key</summary>
 <br>
 
 You must create an application key to give the Kepware server authorization to communicate with the Thingworx server. Navigate to your Thingworx composer on your browser.
@@ -62,9 +57,9 @@ You must create an application key to give the Kepware server authorization to c
 ![Create Appkey](./images/create-key.png)
 
 2. Fill out the app key general information</br>
-    A. Name the app key 'UR3-appkey'</br>
-    B. Set the project to 'UR3-Analytics'</br>
-    C. Under 'User Name Reference', select your own Thingworx username.</br>
+      A. Name the app key 'UR3-appkey'</br>
+      B. Set the project to 'UR3-Analytics'</br>
+      C. Under 'User Name Reference', select your own Thingworx username.</br>
 
 ![Name Appkey](./images/name-key.png)
 
@@ -78,17 +73,21 @@ You must create an application key to give the Kepware server authorization to c
 
 </details>
 
-<li>The device ID or ip address</li>
+
+<details>
+<summary>The device ID or ip address</summary>
+<br>
+
 
 On the UR3 teaching pendant, find the ip address of your UR3 by selecting **Hamburger Menu**>**Settings**>**System**>**Network**. Choose **Static Address** as the network method. Choose an ip address and subnet mask which will allow the UR3 to be on the same network as your computer running the Kepware server.
 
 ![UR3-network](./images/network_highlights.png)
 
+</details>
 
-***********************************************************************************
+[//]: # (comment)
 
-
-Right click **Project** and select **Properties**>**Thingworx**. Input your host address and port number into the **Host** and **Port** fields. Paste your application key into the **application key** field.
+Now that you have found the items we need to add to the kepware configuration, lets go ahead and add them. Right click **Project** and select **Properties**>**Thingworx**. Input your host address and port number into the **Host** and **Port** fields. Paste your application key into the **application key** field.
 
 
 Click **Apply** and **OK**.
