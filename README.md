@@ -141,9 +141,9 @@ Create a new Modbus client by selecting **Installation**>**Fieldbus**>**MODBUS**
 
 Download the following programs to a USB drive from your computer:
 
-[Weight_training.urp](main/Weight_training.urp)
+[Weight_Train.urp](https://github.com/PTC-Education/UR3-Analytics/raw/main/main/Weight_Train.urp)
 
-[Weight_detection.urp](main/Weight_Detection.urp)
+[Weight_Detection.urp](https://github.com/PTC-Education/UR3-Analytics/raw/main/main/Weight_Detection.urp)
 
 Insert the USB drive into the teaching pendant, and save the programs.
 
