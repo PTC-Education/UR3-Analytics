@@ -19,7 +19,7 @@ In this exercise, you will perform:
 To do this exercise, you need:
     <ol>
     <li>Thingworx Kepware installed.</li>
-    <li>Access to a Thingworx 9</li>
+    <li>Access to Thingworx 9 with Thingworx Analytics configured</li>
     <li>A UR robot</li>
     <li>A USB drive</li>
     </ol>
@@ -30,6 +30,23 @@ Please download the folder, [main](main).
 This guide assumes basic Universal robot operation knowledge.
 
 
+### Import UR3-project to Thingworx
+
+Navigate to your Thingworx composer on your browser. Click **Import/Export** and and browse for the file, **UR3-project.twx** on your hardrive. 
+
+
+After you select you file, click **Import**.
+
+This file contains the **UR3-analytics** project. Navigate to the project in in composer by searching for it in the search bar.
+
+![search-thingworx](images/search-thingworx.gif)
+
+Confirm that each of the entities shown in the image below are present. 
+
+![project-entities](images/ur3-project-entities.PNG)
+
+
+***************************************************************
 
 ### Kepware Configuration
 
@@ -105,25 +122,6 @@ In the Kepware configuration, Under **Project**>**Connectivity**>**UR_Channel**,
 *************************************************************
 
 
-### Import UR3-project to Thingworx
-
-Navigate to your Thingworx composer on your browser. Click **Import/Export** and and browse for the file, **UR3-project.twx** on your hardrive. 
-
-
-After you select you file, click **Import**.
-
-This file contains the **UR3-analytics** project. Navigate to the project in in composer by searching for it in the search bar.
-
-![search-thingworx](images/search-thingworx.gif)
-
-Confirm that each of the entities shown in the image below are present. 
-
-![project-entities](images/ur3-project-entities.PNG)
-
-
-***************************************************************
-
-
 ### UR Teaching Pendant Setup
 
 Create a new Modbus client by selecting **Installation**>**Fieldbus**>**MODBUS**>**Add MODBUS Unit**. Enter the same ip address into the **IP Address** field. Add the following modbus signals by selecting **Add New Signal**.
@@ -145,14 +143,14 @@ Download the following programs to a USB drive from your computer:
 
 [Weight_Detection.urp](https://github.com/PTC-Education/UR3-Analytics/raw/main/main/Weight_Detection.urp)
 
-Insert the USB drive into the teaching pendant, and save the programs.
+Insert the USB drive into the teaching pendant.
 
 ******************************************************************************************
 
 ## UR3 Data Collection
 
 <ol>
-    <li>On the teaching pendant, load the Weight_training.urp program.</li>
+    <li>On the teaching pendant, load the Weight_training.urp program</li>
     <li>Navigate to the mashup in Thingworx composer by searching, UR3-analyticsmashup. This mashup will be useful during the next steps. Select View Mashup.</li>
     <li>With 5 well distributed weights in the range of 0-6.6 lbs nearby, press the play button to run the program.</li>
     <li>Follow the prompts on the teaching pendant:
