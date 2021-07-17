@@ -150,7 +150,7 @@ Insert the USB drive into the teaching pendant.
 
 ## UR3 Data Collection
 
-<iframe width="768" height="432" src="https://miro.com/app/live-embed/o9J_l6XpyfA=/?moveToViewport=-1243,-1020,3300,1776" frameBorder="0" scrolling="no" allowFullScreen></iframe>
+![mashup](./images/ur3-analyticsmashup.png)
 
 <ol>
     <li>On the teaching pendant, load the Weight_training.urp program</li>
