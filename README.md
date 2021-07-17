@@ -146,8 +146,11 @@ Download the following programs to a USB drive from your computer:
 Insert the USB drive into the teaching pendant.
 
 ******************************************************************************************
+******************************************************************************************
 
 ## UR3 Data Collection
+
+<iframe width="768" height="432" src="https://miro.com/app/live-embed/o9J_l6XpyfA=/?moveToViewport=-1243,-1020,3300,1776" frameBorder="0" scrolling="no" allowFullScreen></iframe>
 
 <ol>
     <li>On the teaching pendant, load the Weight_training.urp program</li>
@@ -163,7 +166,8 @@ Insert the USB drive into the teaching pendant.
 </li>
 </ol>
 
-  
+******************************************************************************************
+
 ## Modeling
 
 ### Data Understanding
@@ -214,6 +218,8 @@ If you have trained 5 wieghts, you should see at least 5 clusters of points on t
 If you have confirmed that you have successfully logged the data of at least 5 weights in a well distrubted range of 0-6.6 lbs, you can now select **Train Model** in the UR3-analyticsmashup. A JobId is returned from the service you executed when clicking that button and a new jobId string is saved to the **id** property. (This **id** is used in the service which performs the real time scoring.) 
 
 
+******************************************************************************************
+
 
 ## Deployment
      
@@ -231,4 +237,9 @@ If you have confirmed that you have successfully logged the data of at least 5 w
 </ul>
 </li>
 </ol>
+
+******************************************************************************************
+
+
+
   
