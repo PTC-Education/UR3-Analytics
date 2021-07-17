@@ -118,7 +118,7 @@ This file contains the **UR3-analytics** project. Navigate to the project in in 
 
 Confirm that each of the entities shown in the image below are present. 
 
-![project-entities](images/ur3-project.PNG)
+![project-entities](images/ur3-project-entities.PNG)
 
 
 ***************************************************************
