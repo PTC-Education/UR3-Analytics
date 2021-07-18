@@ -18,13 +18,14 @@ In this exercise, you will perform:
 
 To do this exercise, you need:
     <ol>
-    <li>Thingworx Kepware installed.</li>
-    <li>Access to Thingworx 9 with Thingworx Analytics configured</li>
-    <li>A UR robot</li>
+    <li><a href="https://developer.thingworx.com/en/resources/trial/foundation-trial-edition">Thingworx Foundation</a></li>
+    <li><a href="https://developer.thingworx.com/en/resources/trial/analytics-trial-edition">Thingworx Analytics</a></li>
+    <li><a href="https://www.ptc.com/en/products/thingworx/thingworx-kepware-server/demo-download">Thingworx Kepware</a></li>
+    <li><a href="https://www.universal-robots.com/products/ur3-robot/">A UR robot</a></li>
     <li>A USB drive</li>
     </ol>
     
-Please download the folder, [main](main).
+Th files we will be using are located in the [main](main).
 
 
 This guide assumes basic Universal robot operation knowledge.
