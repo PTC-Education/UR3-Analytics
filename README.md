@@ -76,9 +76,9 @@ You must create an application key to give the Kepware server authorization to c
 ![Create Appkey](./images/create-key.png)
 
 2. Fill out the app key general information</br>
-      A. Name the app key 'UR3-appkey'</br>
-      B. Set the project to 'UR3-Analytics'</br>
-      C. Under 'User Name Reference', select your own Thingworx username.</br>
+      A. Name the app key <strong>UR3-appkey</strong></br>
+      B. Set the project to <strong>UR3-Analytics</strong></br>
+      C. Under <strong>User Name Reference</strong>, select your own Thingworx username.</br>
 
 ![Name Appkey](./images/name-key.png)
 
@@ -173,7 +173,7 @@ To begin data collection, navigate to the mashup in Thingworx composer by search
 ## Modeling
 
 ### Data Understanding
-In Thingworx, you can log properties in a remote thing by selecting the property and checking the 'logged' box. In order to log properties to a value stream, the remote thing must have a value stream entity specified, in this case, UR3-valuestream is selected. The property value is logged to the value stream when the value of the logged property changes.
+In Thingworx, you can log properties in a remote thing by selecting the property and checking the <strong>logged</strong> box. In order to log properties to a value stream, the remote thing must have a value stream entity specified, in this case, UR3-valuestream is selected. The property value is logged to the value stream when the value of the logged property changes.
 
 
 Kepware is set to scan for new property values every 10 ms, which can lead to many values being logged. In our case, we are only interested in certain rows of data, and not every single new value that logs to the value stream.
@@ -217,16 +217,16 @@ If you have let the robot hold 5 different weights, you should see at least 5 cl
 ![line chart](./images/linechart.png)
 
 <ol>
-<li>If you have confirmed that you have successfully logged the data of at least 5 weights in a well distrubted range of 0-6.6 lbs, you can now select **Save Dataset** in the UR3-analyticsmashup. This saves the gathered data to a dataset which can be referenced by other services. The other buttons become disabled while this service executes because the new dataset will be referenced by the other buttons.</li>
+<li>If you have confirmed that you have successfully logged the data of at least 5 weights in a well distrubted range of 0-6.6 lbs, you can now select <strong>Save Dataset</strong> in the UR3-analyticsmashup. This saves the gathered data to a dataset which can be referenced by other services. The other buttons become disabled while this service executes because the new dataset will be referenced by the other buttons.</li>
 
 
-<li>Once the dataset creation is complete, the **Train Model** button is enabled. Select this button and a predictive model will be created.</li> 
+<li>Once the dataset creation is complete, the <strong>Train Model</strong> button is enabled. Select this button and a predictive model will be created.</li> 
 
 
-<li>Once the model is created, you can select **Validate Model**. This will run a service which produces validation metrics for our predictive model.</li>
+<li>Once the model is created, you can select <strong>Validate Model</strong>. This will run a service which produces validation metrics for our predictive model.</li>
 
 
-<li>Once the validation job is complete, you can select **Show Results** which will retrieve the results of the model validation. The results are displayed in the table above the line chart in the mashup. These results help us understand the quality of our model. [Description of model result statistics.](https://support.ptc.com/help/thingworx_hc/thingworx_analytics_8/index.html#page/thingworx_analytics_8/analytics-builder-models-view-results.html)</li>
+<li>Once the validation job is complete, you can select <strong>Show Results</strong> which will retrieve the results of the model validation. The results are displayed in the table above the line chart in the mashup. These results help us understand the quality of our model. [Description of model result statistics.](https://support.ptc.com/help/thingworx_hc/thingworx_analytics_8/index.html#page/thingworx_analytics_8/analytics-builder-models-view-results.html)</li>
 </ol>
 
 ******************************************************************************************
