@@ -171,13 +171,13 @@ Insert the USB drive into the teaching pendant.
 ## Modeling
 
 ### Data Understanding
-In Thingworx, you can log properties in a remote thing by selecting the property and checking the 'logged' box. In order to log properties to a value stream, the remote thing must have a value stream entity specified, in this case, UR3-valuestream is selected. The property value is logged to the value stream whenever the value changes.
+In Thingworx, you can log properties in a remote thing by selecting the property and checking the 'logged' box. In order to log properties to a value stream, the remote thing must have a value stream entity specified, in this case, UR3-valuestream is selected. The property value is logged to the value stream when the value of the logged property changes.
 
 
-Kepware is set to scan for new property values every 10 ms, which can lead to many values being logged. In our case, we are only interested in certain wos of data, and not every single new value that logs to the value stream.
+Kepware is set to scan for new property values every 10 ms, which can lead to many values being logged. In our case, we are only interested in certain rows of data, and not every single new value that logs to the value stream.
 
 
-Though we are logging 7 properties with each data change, we will only use a small portion of this data to make the prediction. The data that will help us create the best machine learning model we can will match the following conditions:
+Though we are logging 7 properties with each data change, we will only use a small portion of this data to make the prediction. The data that will help us create the best machine learning model will match the following conditions:
 <ul>
     <li>The robot must be in a specific position.
         <ul>
@@ -203,9 +203,9 @@ Though we are logging 7 properties with each data change, we will only use a sma
     </li>
 </ul>
 
-A service called **QueryPropertyHistory** retrieves the logged property data. Since we only want certain data, we defined a query parameter which filters out the unwanted data when running this service. This query is a property in UR3-remotething called **queryFilter**. This query filters the data according to the cases presented above.
+A [Thing service](https://support.ptc.com/help/thingworx/platform/r9/en/index.html#page/ThingWorx%2FHelp%2FComposer%2FThings%2FThingServices.html%23) called [**QueryPropertyHistory**](https://support.ptc.com/help/thingworx_hc/thingworx_8_hc/en/index.html#page/ThingWorx%2FHelp%2FComposer%2FDataStorage%2FValueStreams%2FAccessingValueStreamDataUsingServices.html%23) retrieves the logged property data. Since we only want certain data, we defined a [query](https://support.ptc.com/help/thingworx_hc/thingworx_8_hc/en/index.html#page/ThingWorx/Help/Composer/Things/ThingServices/QueryParameterforQueryServices.html)  parameter which filters out the unwanted data when running this service. This query is a property in UR3-remotething called **queryFilter**. This query filters the data according to the cases presented above.
 
-To train a machine learning model, we will use the Thingworx Analytics REST API services. The model training service will use the data retrieved after running the QueryPropertyHistory service with the aforementioned query as a parameter. We specify multiple linear regresison so that we can predict weights that the robot has not held before.
+To train a machine learning model, we will use the [Thingworx Analytics REST API](http://support.ptc.com/help/thingworx_hc/api_docs/) services. The model training service will use the data retrieved after running the QueryPropertyHistory service with the aforementioned query as a parameter. We specify the multiple linear regresison algorithm because it can predict a continuous value. This allows us to predict weights that the robot has not held before.
 
 
 ### Train Model
