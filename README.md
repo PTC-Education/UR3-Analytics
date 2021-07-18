@@ -226,8 +226,10 @@ If you have let the robot hold 5 different weights, you should see at least 5 cl
 <li>Once the model is created, you can select <strong>Validate Model</strong>. This will run a service which produces validation metrics for our predictive model.</li>
 
 
-<li>Once the validation job is complete, you can select <strong>Show Results</strong> which will retrieve the results of the model validation. The results are displayed in the table above the line chart in the mashup. These results help us understand the quality of our model. [Description of model result statistics.](https://support.ptc.com/help/thingworx_hc/thingworx_analytics_8/index.html#page/thingworx_analytics_8/analytics-builder-models-view-results.html)</li>
+<li>Once the validation job is complete, you can select <strong>Show Results</strong> which will retrieve the results of the model validation. The results are displayed in the table above the line chart in the mashup. These results help us understand the quality of our model. <a href="https://support.ptc.com/help/thingworx_hc/thingworx_analytics_8/index.html#page/thingworx_analytics_8/analytics-builder-models-view-results.html">Description of model result statistics</a></li>
 </ol>
+
+
 
 ******************************************************************************************
 
