@@ -146,15 +146,17 @@ Download the following programs to a USB drive from your computer:
 Insert the USB drive into the teaching pendant.
 
 ******************************************************************************************
-******************************************************************************************
 
 ## UR3 Data Collection
 
+To begin data collection, navigate to the mashup in Thingworx composer by searching, UR3-analyticsmashup. Select View Mashup. This mashup will be useful when collecting data because you will see the data logged to the line chart. You can also see the actual amperage of each joint. 
+
+
 ![mashup](./images/ur3-analyticsmashup.png)
+
 
 <ol>
     <li>On the teaching pendant, load the Weight_training.urp program</li>
-    <li>Navigate to the mashup in Thingworx composer by searching, UR3-analyticsmashup. This mashup will be useful during the next steps. Select View Mashup.</li>
     <li>With 5 well distributed weights in the range of 0-6.6 lbs nearby, press the play button to run the program.</li>
     <li>Follow the prompts on the teaching pendant:
 <ul>
@@ -205,17 +207,26 @@ Though we are logging 7 properties with each data change, we will only use a sma
 
 A [Thing service](https://support.ptc.com/help/thingworx/platform/r9/en/index.html#page/ThingWorx%2FHelp%2FComposer%2FThings%2FThingServices.html%23) called [**QueryPropertyHistory**](https://support.ptc.com/help/thingworx_hc/thingworx_8_hc/en/index.html#page/ThingWorx%2FHelp%2FComposer%2FDataStorage%2FValueStreams%2FAccessingValueStreamDataUsingServices.html%23) retrieves the logged property data. Since we only want certain data, we defined a [query](https://support.ptc.com/help/thingworx_hc/thingworx_8_hc/en/index.html#page/ThingWorx/Help/Composer/Things/ThingServices/QueryParameterforQueryServices.html)  parameter which filters out the unwanted data when running this service. This query is a property in UR3-remotething called **queryFilter**. This query filters the data according to the cases presented above.
 
-To train a machine learning model, we will use the [Thingworx Analytics REST API](http://support.ptc.com/help/thingworx_hc/api_docs/) services. The model training service will use the data retrieved after running the QueryPropertyHistory service with the aforementioned query as a parameter. We specify the multiple linear regresison algorithm because it can predict a continuous value. This allows us to predict weights that the robot has not held before.
+To train a machine learning model, we will use the [Thingworx Analytics REST API](http://support.ptc.com/help/thingworx_hc/api_docs/) services. The model training service will use the data retrieved after running the QueryPropertyHistory service with the aforementioned query as a parameter. We specify the multiple linear regresison algorithm because it can predict a continuous value. This allows us to predict weights that the robot has not held before. The Thingworx Analytics REST API services are executed when you select the **Analytics** buttons in the mashup. We will go over how to use the buttons properly in the next section.
 
 
 ### Train Model
 
-If you have trained 5 wieghts, you should see at least 5 clusters of points on the line chart in the UR3-analyticsmashup. Confirm this before continuing on. It may look similar to the image below.
+If you have let the robot hold 5 different weights, you should see at least 5 clusters of points on the line chart in the UR3-analyticsmashup. Confirm this before continuing on. It may look similar to the image below.
 
 ![line chart](./images/linechart.png)
 
 
-If you have confirmed that you have successfully logged the data of at least 5 weights in a well distrubted range of 0-6.6 lbs, you can now select **Train Model** in the UR3-analyticsmashup. A JobId is returned from the service you executed when clicking that button and a new jobId string is saved to the **id** property. (This **id** is used in the service which performs the real time scoring.) 
+If you have confirmed that you have successfully logged the data of at least 5 weights in a well distrubted range of 0-6.6 lbs, you can now select **Save Dataset** in the UR3-analyticsmashup. This saves the gathered data to a dataset which can be referenced by other services. The other buttons become disabled while this service executes because the new dataset will be referenced by the other buttons. 
+
+
+Once the dataset creation is complete, the **Train Model** button is enabled. Select this button and a predictive model will be created. 
+
+
+Once the model is created, you can select **Validate Model**. This will run a service which produces validation metrics for our predictive model.
+
+
+Once the validation job is complete, you can select **Show Results** which will retrieve the results of the model validation. The results are displayed in the table above the line chart in the mashup. These results help us understand the quality of our model. [Description of model result statistics.](https://support.ptc.com/help/thingworx_hc/thingworx_analytics_8/index.html#page/thingworx_analytics_8/analytics-builder-models-view-results.html)
 
 
 ******************************************************************************************
@@ -223,16 +234,17 @@ If you have confirmed that you have successfully logged the data of at least 5 w
 
 ## Deployment
      
-   <ol>
+For model deployment, the mashup is also useful because the predicted weight is displayed in the top left of the mashup. (When running Weight_Detection.urp, the Object Weight is set to 9999 so we can filter out the data collected since the Object Weight would be an inaccurate value.)
+
+<ol>
     <li>On the teaching pendant, load the Weight_Detection.urp program.</li>
-    <li>Navigate to the mashup in Thingworx composer by searching, 'UR3-analyticsmashup'. This mashup will be useful during the next steps. Select View Mashup.</li>
     <li>With 5 weights in the range of 0-6.6 lbs nearby (these should be different weights than what you used in Data Collection), press the play button to run the program.</li>
     <li>Follow the prompts on the teaching pendant:
 <ul>
     <li>When prompted, hold object inside the gripper while you simultaneously press continue. The gripper will closer, holding the object</li>
     <li>The robot will move to the same position as it did when training, but this time it will be detecting the weight. The weight will appear on the teaching pendant screen as a popup after a few seconds.</li>
     <li>The robot will sort the object by weight, placing it into 1 of 3 piles. Once above the pile, the robot will move down slowly until it makes contact. Upon making contact, the robot will release the object.</li>
-    <li>On completion of the sorting, select 'yes' to remove object and the program will loop, asking for a new object.</li>
+    <li>On completion of the sorting, the program will loop and ask for a new object.</li>
     <li>Repeat this as many times as you want. It might be interesting to compare the accuracy of the predicitons to the actual object weight.</li>
 </ul>
 </li>
