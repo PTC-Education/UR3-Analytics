@@ -216,18 +216,18 @@ If you have let the robot hold 5 different weights, you should see at least 5 cl
 
 ![line chart](./images/linechart.png)
 
-
-If you have confirmed that you have successfully logged the data of at least 5 weights in a well distrubted range of 0-6.6 lbs, you can now select **Save Dataset** in the UR3-analyticsmashup. This saves the gathered data to a dataset which can be referenced by other services. The other buttons become disabled while this service executes because the new dataset will be referenced by the other buttons. 
-
-
-Once the dataset creation is complete, the **Train Model** button is enabled. Select this button and a predictive model will be created. 
+<ol>
+<li>If you have confirmed that you have successfully logged the data of at least 5 weights in a well distrubted range of 0-6.6 lbs, you can now select **Save Dataset** in the UR3-analyticsmashup. This saves the gathered data to a dataset which can be referenced by other services. The other buttons become disabled while this service executes because the new dataset will be referenced by the other buttons.</li>
 
 
-Once the model is created, you can select **Validate Model**. This will run a service which produces validation metrics for our predictive model.
+<li>Once the dataset creation is complete, the **Train Model** button is enabled. Select this button and a predictive model will be created.</li> 
 
 
-Once the validation job is complete, you can select **Show Results** which will retrieve the results of the model validation. The results are displayed in the table above the line chart in the mashup. These results help us understand the quality of our model. [Description of model result statistics.](https://support.ptc.com/help/thingworx_hc/thingworx_analytics_8/index.html#page/thingworx_analytics_8/analytics-builder-models-view-results.html)
+<li>Once the model is created, you can select **Validate Model**. This will run a service which produces validation metrics for our predictive model.</li>
 
+
+<li>Once the validation job is complete, you can select **Show Results** which will retrieve the results of the model validation. The results are displayed in the table above the line chart in the mashup. These results help us understand the quality of our model. [Description of model result statistics.](https://support.ptc.com/help/thingworx_hc/thingworx_analytics_8/index.html#page/thingworx_analytics_8/analytics-builder-models-view-results.html)</li>
+</ol>
 
 ******************************************************************************************
 
