@@ -149,7 +149,7 @@ Insert the USB drive into the teaching pendant.
 
 ## UR3 Data Collection
 
-To begin data collection, navigate to the mashup in Thingworx composer by searching, UR3-analyticsmashup. Select View Mashup. This mashup will be useful when collecting data because you will see the data logged to the line chart. You can also see the actual amperage of each joint. 
+To begin data collection, navigate to the mashup in Thingworx composer by searching, **UR3-analyticsmashup**. Select View Mashup. This mashup will be useful when collecting data because you will see the data logged to the line chart. You can also see the actual amperage of each joint. 
 
 
 ![mashup](./images/ur3-analyticsmashup.png)
