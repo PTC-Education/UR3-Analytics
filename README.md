@@ -121,8 +121,9 @@ In the Kepware configuration, Under **Project**>**Connectivity**>**UR_Channel**,
 
 <strong>Tip</strong>: Be mindful of when you are collecting data because things become slower the more data you collect. IF you are not actively needing to collect data, you can either turn off the robot or disable data collection in Kepware.
 <ul>
-    <li>To turn off the robot, press the <p style="color:green;">Green</p> button in the bottom left of the teaching pendant and then <strong>off</strong>.</li>
+    <li>To turn off the robot, press the <strong>Green</strong> button in the bottom left of the teaching pendant and then <strong>off</strong>.</li>
     <li>To disable data collection in Kepware, right click <strong>UR3</strong>>Select <strong>Properties</strong>><strong>General</strong>><strong>Data Collection</strong>><strong>Disable</strong>.</li>
+</ul>
 *************************************************************
 
 
