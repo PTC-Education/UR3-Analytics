@@ -124,6 +124,8 @@ In the Kepware configuration, Under **Project**>**Connectivity**>**UR_Channel**,
     <li>To turn off the robot, press the <strong>Green</strong> button in the bottom left of the teaching pendant and then <strong>off</strong>.</li>
     <li>To disable data collection in Kepware, right click <strong>UR3</strong>>Select <strong>Properties</strong>><strong>General</strong>><strong>Data Collection</strong>><strong>Disable</strong>.</li>
 </ul>
+
+
 *************************************************************
 
 
