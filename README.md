@@ -259,7 +259,7 @@ For model deployment, the mashup is also useful because the predicted weight is 
 </li>
 </ol>
 
-If you want to start fresh and delete all the data you have collected so far, navigate to the UR3-remotething in Thingworx Composer and select **Services**>Expand the **Generic** item at the bottom of the page>fin the service called **PurgeAllPropertyHistory**. Execute this service and specify the start and end date. 
+If you want to start fresh and delete all the data you have collected so far, navigate to the UR3-remotething in Thingworx Composer and select **Services**>Expand the **Generic** item at the bottom of the page>find the service called **PurgeAllPropertyHistory**. Execute this service and specify the start and end date. 
 
 ******************************************************************************************
 
