@@ -1,0 +1,53 @@
+ Program
+   BeforeStart
+     Set ObjectWeight=9999
+     Set SortingDone=1
+     Set position=0
+     MoveJ
+       grabPos
+       Popup: Gripper will open and may drop something!
+       Gripper Activate
+       Gripper Open (1)
+   Robot Program
+     Set SortingDone=0
+     Popup: Place object in gripper
+     Comment
+     Gripper Close (1)
+     MoveJ
+       WeighPoint
+     Wait: 1.0
+     Set position=1
+     Wait AnalysisDone≟1
+     weight≔(TWX_Weight/1000) 
+     'Popup'
+     MoveJ
+       binReady
+     Set position=0
+     If weight<2
+       MoveL
+         bin1
+         Call SetDown
+     ElseIf weight<4
+       MoveL
+         bin2
+         Call SetDown
+     ElseIf weight<6.6
+       MoveL
+         bin3
+         Call SetDown
+     Else
+       Popup: Weight too heavy
+       MoveL
+         bin3
+         Call SetDown
+     Set SortingDone=1
+     MoveJ
+       Wait: 1.0
+       grabPos
+   SetDown
+     MoveL
+       Direction: Base Z-
+         Until (tool_contact_detection)
+       Gripper Open (1)
+       Direction: Base
+         Until (distance)

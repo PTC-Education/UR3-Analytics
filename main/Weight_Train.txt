@@ -1,0 +1,35 @@
+ Program
+   BeforeStart
+     weight≔9999
+     MoveJ
+       grabPos
+     Popup: Gripper will open and potentially drop something
+     Gripper Activate
+     Gripper Open (1)
+     Loop weight<0 or weight>6.6
+       weight≔'Input the weight of the object in lbs.'
+       If weight≥0 and weight≤6.6
+         Set ObjectWeight=weight*1000
+       Else
+         Popup: Weight must be between 0 - 6.6
+     Popup: Place object in gripper
+     Wait: 1.0
+     Gripper Close (1)
+   Robot Program
+     MoveJ
+       WeighPoint
+       Wait: 2.0
+       Set position=1
+       Wait: 30.0
+       Set position=0
+       Wait: 2.0
+     MoveJ
+       grabPos
+     rmv_obj≔'Remove object?'
+     If rmv_obj≟ True 
+       Gripper Open (1)
+       weight≔'What is the weight of the object in lbs.'
+       Set ObjectWeight=weight*1000
+       Popup: Place object in gripper
+       Wait: 1.0
+       Gripper Close (1)
